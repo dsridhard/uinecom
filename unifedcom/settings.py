@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'uincom',
     'rest_framework',
     'django_celery_beat',
+    'customer',
+    'orders', 
+    'payments',
+    'reviews',
 ]
 
 MIDDLEWARE = [
