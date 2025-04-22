@@ -70,47 +70,35 @@ Rating: product, customer, rating (1-5 stars)
 ⚙️ Setup Instructions
 Clone the repository:
 
-bash
-Copy
-Edit
+Step 1:
 git clone https://github.com/your-username/unifedcom.git
 cd unifedcom
 Create a virtual environment & activate it:
 
-bash
-Copy
-Edit
+Step 2:
 python -m venv venv
 venv\Scripts\activate    # On Windows
 Install dependencies:
 
-bash
-Copy
-Edit
+Step 3:
 pip install -r requirements.txt
 Apply migrations:
 
-bash
-Copy
-Edit
+Step 4:
 python manage.py makemigrations
 python manage.py migrate
 Run the development server:
 
-bash
-Copy
-Edit
+Step 5:
+
 python manage.py runserver
 Access the site:
-
 Open your browser and go to: http://localhost:8000
 
 📋 Admin Access
 To access the Django admin panel:
 
-bash
-Copy
-Edit
+#Run Command
 python manage.py createsuperuser
 Then login at: http://localhost:8000/admin
 
