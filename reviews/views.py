@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -7,10 +7,12 @@ from .serializers import RatingSerializer, ReviewSerializer
 # Create your views here.
 
 class RatingListAPIView(APIView):
+    permission_classes=[IsAuthenticated]
     def get(self, request):
         ratings = Rating.objects.all()
         serializer = RatingSerializer(ratings, many=True)
         return Response(serializer.data)
+    permission_classes=[IsAuthenticated]
     def post(self, request):
         serializer = RatingSerializer(data=request.data)
         if serializer.is_valid():
@@ -19,6 +21,7 @@ class RatingListAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ReviewListAPIView(APIView):
+    permission_classes=[IsAuthenticated]
     def get(self, request):
         reviews = Review.objects.all()
         serializer = ReviewSerializer(reviews, many=True)
